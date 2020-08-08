@@ -7,15 +7,9 @@ const required =(val) =>val&&val.length;
 const maxLength = (len)=>(val)=>!(val)||(val.length<=len)
 const minLength = (len)=>(val)=>(val)&&(val.length>=len)
 const isNumber = (val)=>!isNaN(Number(val))
-const validEmail = (val)=>/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
 
 
 class Signin extends Component {
-    handleSubmit=(values)=>
-    {
-        this.props.postFeedback(values)
-        this.props.resetFeedbackForm()
-    }
 
     render() { 
         return ( 
@@ -84,13 +78,11 @@ class Signin extends Component {
             
                         <Row className="form-group">
                             <div id="recaptcha-container"></div>
- 
-                                <Button type="submit" onClick="phoneAuth();" color="secondary" style={{ borderRadius: '100px', height: '56px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'center', alignSelf: 'center', width: '350px' }}>
+
+                                <Button type="submit" href="./Verify" onClick="phoneAuth();" color="secondary" style={{ borderRadius: '100px', height: '56px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'center', alignSelf: 'center', width: '350px' }}>
                             Done
                             </Button>
                         
-                        
-                    
                     </Row>
 
                 </Form>
