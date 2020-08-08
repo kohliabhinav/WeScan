@@ -19,7 +19,7 @@ class Main extends Component {
           <Route exact path='/verify' component={() => <Verify resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} /> />
           <Route exact path='/scan' component={() => <Scan resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} /> />
           <Route exact path='/seeyou' component={() => <Seeyou resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
-                        <Redirect to="/Subadminsignin"/>
+                        <Redirect to="/Signin"/>
         </Switch>
     </div>
     );
