@@ -1,9 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { actions } from 'react-redux-form';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Confirm from './ConfirmationComponent';
 import Scan from './ScanComponent';
 import Seeyou from './Seeyou';

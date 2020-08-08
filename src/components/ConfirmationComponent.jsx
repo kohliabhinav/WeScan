@@ -4,7 +4,7 @@ class Confirm extends Component {
     render() {
         return (
             <div style={{ marginRight: "50px" }}>
-                <center><img src="./assets/images/Awesome.svg" style={{ width: "483px", height: "246px" }}/></center>
+                <center><img src="./assets/images/Awesome.svg" alt="awesome" style={{ width: "483px", height: "246px" }}/></center>
                 <div>
                     <center><h1>Awesome!</h1></center>
                     <center><p style={{ width: "188px", height: "24px", fontFamily: "Roboto", textColor: "B8BBC6" }}>You Gained the pass</p></center >

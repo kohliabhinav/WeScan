@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
-import {Breadcrumb, BreadcrumbItem,Button,Label,Row,Col} from 'reactstrap'
-import {Link} from 'react-router-dom'
+import {Button,Row,Col} from 'reactstrap'
 import {Control,Form,Errors} from 'react-redux-form'
 
 const required =(val) =>val&&val.length;
@@ -15,7 +14,7 @@ class Subadminsignin extends Component {
         return ( 
             <div className="container">
              <div className="row">
-                    <img src="./assets/images/Welcome.svg" style={{ width: "320px", height: "246px",marginLeft:'3px',leftMargin:'100px' }} /><br /><br />
+                    <img src="./assets/images/Welcome.svg" alt="welcome" style={{ width: "320px", height: "246px",marginLeft:'3px',leftMargin:'100px' }} /><br /><br />
 
                     <div className="col-12">
                         <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing:"38" }}> Please Enter</h1>

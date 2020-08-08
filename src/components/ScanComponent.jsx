@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-    Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron,
-    Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input
-} from 'reactstrap'
+import {Jumbotron} from 'reactstrap'
 import QrReader from "react-qr-reader";
 
 class Scan extends Component {

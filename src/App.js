@@ -34,7 +34,7 @@ class App extends Component {
                 var code = window.prompt("Enter OTP");
                 confirmationResult.confirm(code).then(function (result) {
                     // User signed in successfully.
-                    var user = result.user;
+                    // var user = result.user;
                     console.log("User is signed in")
                     // ...
                 }).catch(function (error) {

@@ -4,7 +4,7 @@ class Seeyou extends Component {
     render() {
         return (
             <div style={{ marginRight: "50px" }}>
-                <center><img src="./assets/images/SeeYou.svg" style={{ width: "483px", height: "246px" }} /></center>
+                <center><img src="./assets/images/SeeYou.svg" alt="seeyou" style={{ width: "483px", height: "246px" }} /></center>
                 <div><br/>
                     <center><h1>See you again!</h1></center>
                     <center><p style={{ width: "298px", height: "19px", fontFamily: "Roboto", textColor: "B8BBC6" }}>Thank You for your cooperation</p></center>
