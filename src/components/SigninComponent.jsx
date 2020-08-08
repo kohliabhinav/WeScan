@@ -10,15 +10,22 @@ const isNumber = (val)=>!isNaN(Number(val))
 
 class Signin extends Component {
 
-    render() { 
-        return ( 
-            <div className="container">
-             <div className="row">
+    handleSubmit = (values) => {
+        this.props.postFeedback(values)
+        this.props.resetFeedbackForm()
+    }
+
+    render() {
+        return (
+            <div className="container" style={{
+                padding: "50px"
+            }}>
+           
             
-                    <div className="col-12">
-                        <h1 style={{ fontFamily: "Roboto", marginLeft: '40px', fontSize: "28", width: "174", height: "37", letterSpacing:"38" }}> Please Enter</h1>
-                    </div>
-            </div>
+                   
+                        <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing: "38", marginLeft:"10px" }}> Please Enter</h1>
+                 
+           
 
             
             <div className="row row-content">
@@ -27,7 +34,8 @@ class Signin extends Component {
         <Row className="form-group">
                                 
                                 <Col md={10}>
-                                    <Control.text model=".fullname" id="fullname" name="fullname" style={{ width: "290px", marginLeft: '10px', height: "56px", fontFamily: "Roboto", fontSize: "16", borderRadius:"6px" }}
+                                    <Control.text model=".fullname" id="fullname" name="fullname" style={{
+                                        width: "290px", height: "56px", fontFamily: "Roboto", fontSize: "16", borderRadius: "6px" }}
                                         placeholder="Full Name" 
                                     className="form-control"
                                         validators={{
@@ -45,14 +53,15 @@ class Signin extends Component {
                                         }}
                                      />
                                 </Col>
-                            </Row>
+                            </Row><br/>
                           
                             <Row className="form-group" onSubmit={this.onSignInSubmit}>
                                 <div id="recaptcha-container"></div>
                                                       <Col md={10}>
                             <Control.text  
                             id="telnum"
-                                        name="telnum" style={{ width: "290px", marginLeft: '10px', height: "56px", borderRadius: "6px",fontFamily: "Roboto", fontSize: "16" }}
+                                        name="telnum" style={{
+                                            width: "290px", height: "56px", borderRadius: "6px",fontFamily: "Roboto", fontSize: "16" }}
                             model=".telnum"
                             className="form-control" 
                             validators={{
@@ -73,12 +82,12 @@ class Signin extends Component {
                             }}
                             />
                         </Col>
-                    </Row>
+                    </Row><br/>
             
                         <Row className="form-group">
                             <div id="recaptcha-container"></div>
 
-                                <Button type="submit" href="./Verify" onClick="phoneAuth();" color="secondary" style={{ borderRadius: '100px', height: '56px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'center', alignSelf: 'center', width: '350px' }}>
+                                <Button type="submit" href="./Verify" onClick="phoneAuth();" color="secondary" style={{ borderRadius: '100px', height: '56px', width: '300px', marginLeft:"20px" }}>
                             Done
                             </Button>
                         

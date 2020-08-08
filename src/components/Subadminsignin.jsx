@@ -11,10 +11,12 @@ const isNumber = (val)=>!isNaN(Number(val))
 class Subadminsignin extends Component {
 
     render() { 
-        return ( 
-            <div className="container">
+        return (
+            <div className="container" style={{
+                padding: "50px"
+            }}>
              <div className="row">
-                    <img src="./assets/images/Welcome.svg" alt="welcome" style={{ width: "320px", height: "246px",marginLeft:'3px',leftMargin:'100px' }} /><br /><br />
+                    <img src="./assets/images/Welcome.svg" alt="welcome" style={{ width: "320px", height: "246px",marginLeft:'3px',leftMargin:'100px' }} />
 
                     <div className="col-12">
                         <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing:"38" }}> Please Enter</h1>
