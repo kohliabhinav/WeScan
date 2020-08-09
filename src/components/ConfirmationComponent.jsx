@@ -13,7 +13,7 @@ class Confirm extends Component {
                         <center><p style={{ width: "375px", height: "56px", fontFamily: "Roboto", textColor: "B8BBC6" }}>Download our App to save time on your next visit </p></center>
 
                 </div>
-                <center><button style={{ backgroundColor: "Yellow" }}>
+                <center><button type="submit" href="./Seeyou" style={{ backgroundColor: "Yellow" }}>
                     <center><p style={{ width: "400px", height: "40px", fontFamily: "Roboto", textColor: "B8BBC6" }}> Download App </p></center>
                     </button></center>
             </div>

@@ -17,7 +17,7 @@ class Verify extends Component {
         return (
             <div className="container" style={{
                 padding: "50px"
-            }}>
+            }}><br/><br/>
                 <div className="row">
                     <div className="col-12">
                         <h2 style={{ fontFamily: "Roboto",fontSize: "28", width: "174", height: "37", letterSpacing: "38", textDecorationColor: 'black', fontWeight:"100px" }}> Verify your Phone</h2>
@@ -37,9 +37,9 @@ class Verify extends Component {
                 <a href="#" style={{ fontFamily: "Roboto", fontSize: "16", width: "88", height: "21", letterSpacing: "38" }}>Resend OTP</a><br /><br />
                     <div><br/>
                     
-                <Row className="form-group">
-                    
-                            <Button type="submit" href="./Confirm" onClick="codeverify();" color="secondary" style={{ marginLeft:"10px" ,borderRadius: '100px', width: '285px', height: '56px' }}>
+                        <Row className="form-group">
+
+                            <Button type="submit" href="./Confirm" onClick="codeverify();" color="secondary" style={{ marginLeft: "10px", borderRadius: '100px', width: '285px', height: '56px' }}>
                             VERIFY
                             </Button>
 
