@@ -1,7 +1,6 @@
-import * as firebase from "firebase"
+import firebase from 'firebase'
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
+const config = {
     apiKey: "AIzaSyAbmftWV2oYvdh65HcwDMhL_p7au4wq7pM",
     authDomain: "wescan-in.firebaseapp.com",
     databaseURL: "https://wescan-in.firebaseio.com",
@@ -9,10 +8,6 @@ var firebaseConfig = {
     storageBucket: "wescan-in.appspot.com",
     messagingSenderId: "557646814015",
     appId: "1:557646814015:web:aaac4052dfeaae383d518a",
-    measurementId: "G-ZQYS4L7QNQ"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
+}
+firebase.initializeApp(config);
 export default firebase

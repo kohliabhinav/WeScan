@@ -1,106 +1,129 @@
 import React, { Component } from 'react';
-import { Button, Row, Col } from 'reactstrap'
-import { Control, Form, Errors } from 'react-redux-form'
 
-const required = (val) => val && val.length;
-const maxLength = (len) => (val) => !(val) || (val.length <= len)
-const minLength = (len) => (val) => (val) && (val.length >= len)
-const isNumber = (val) => !isNaN(Number(val))
 
 
 class Signin extends Component {
 
-    handleSubmit = (values) => {
-        this.props.postFeedback(values)
-        this.props.resetFeedbackForm()
+    constructor() {
+        super();
+        this.state = {
+            input: {},
+            errors: {}
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleChange(event) {
+        let input = this.state.input;
+        input[event.target.name] = event.target.value;
+
+        this.setState({
+            input
+        });
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+        if (this.validate()) {
+            console.log(this.state);
+
+            let input = {};
+            input["name"] = "";
+            input["phone"] = "";
+            this.setState({ input: input });
+
+            alert('Response is submited');
+        }
+    }
+    validate() {
+        let input = this.state.input;
+        let errors = {};
+        let isValid = true;
+
+        if (!input["name"]) {
+            isValid = false;
+            errors["name"] = "Please enter your name.";
+        }
+
+        
+        if (!input["phone"]) {
+            isValid = false;
+            errors["phone"] = "Please enter your phone number.";
+        }
+
+        if (typeof input["phone"] !== "undefined") {
+
+            var pattern = new RegExp(/^[0-9\b]+$/);
+            if (!pattern.test(input["phone"])) {
+                isValid = false;
+                errors["phone"] = "Please enter only number.";
+            } else if (input["phone"].length != 10) {
+                isValid = false;
+                errors["phone"] = "Please enter valid phone number.";
+            }
+        }
+
+       
+
+        return isValid;
+    }
+
+    
     render() {
         return (
-           <div className="container" style={{
+           <center> <div className="container" style={{
                 padding: "50px"
-            }}><br/><br/>
+            }}><br /><br />
 
 
 
-                <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing: "38", marginLeft: "20px" }}> Please Enter</h1>
+                <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing: "38", marginLeft: "20px" }}> Please Enter</h1><br/><br/>
 
 
+                <form onSubmit={this.handleSubmit}>
 
+                    <div class="form-group">
+                        
+                        <input style={{
+                            width: "290px", height: "56px", fontFamily: "Roboto", fontSize: "16", borderRadius: "6px"
+                        }}
+                            type="text"
+                            name="name"
+                            value={this.state.input.name}
+                            onChange={this.handleChange}
+                            class="form-control"
+                            placeholder="Full Name"
+                            id="name"
+                        />
 
-                <div className="row row-content">
-                    <div className="col-12 col-md-9">
-                        <Form model="feedback" onSubmit={(values) => this.handleSubmit(values)}>
-                            <Row className="form-group">
+                        <div className="text-danger">{this.state.errors.name}</div>
+                    </div><br/>
 
-                                <Col md={10}>
-                                    <Control.text model=".fullname" id="fullname" name="fullname" style={{
-                                        width: "290px", height: "56px", fontFamily: "Roboto", fontSize: "16", borderRadius: "6px"
-                                    }}
-                                        placeholder="Full Name"
-                                        className="form-control"
-                                        validators={{
-                                            required, minLength: minLength(3), maxLength: maxLength(15)
-                                        }}
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".fullname"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required  ',
-                                            minLength: 'Must be greater than 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
-                                        }}
-                                    />
-                                </Col>
-                            </Row><br />
+                    
 
-                            <Row className="form-group" onSubmit={this.onSignInSubmit}>
-                                <div id="recaptcha-container"></div>
-                                <Col md={10}>
-                                    <Control.text
-                                        id="telnum"
-                                        name="telnum" style={{
-                                            width: "290px", height: "56px", borderRadius: "6px", fontFamily: "Roboto", fontSize: "16"
-                                        }}
-                                        model=".telnum"
-                                        className="form-control"
-                                        validators={{
-                                            required, minLength: minLength(7), maxLength: maxLength(10), isNumber
-                                        }}
-                                        placeholder="Mobile Number"
+                    <div class="form-group">
+                        
+                        <input style={{
+                            width: "290px", height: "56px", borderRadius: "6px", fontFamily: "Roboto", fontSize: "16"
+                        }}
+                            type="text"
+                            name="phone"
+                            value={this.state.input.phone}
+                            onChange={this.handleChange}
+                            class="form-control"
+                            placeholder="Mobile Number"
+                            id="number" />
 
-                                    />
-                                    <Errors
-                                        className="text-danger"
-                                        model=".telnum"
-                                        show="touched"
-                                        messages={{
-                                            required: 'Required ',
-                                            minLength: 'Mush be greater than 7 numberss',
-                                            maxLength: 'Must be 10 numberss or less',
-                                            isNumber: 'Must be a number'
-                                        }}
-                                    />
-                                </Col>
-                            </Row><br />
+                        <div className="text-danger">{this.state.errors.phone}</div>
+                    </div><br/>
 
-                            <Row className="form-group">
-                                <div id="recaptcha-container"></div>
-
-                                <Button type="submit" href="./Verify" onClick="phoneAuth();" color="secondary" style={{ borderRadius: '100px', height: '56px', width: '290px', marginLeft: "20px" }}>
-                                    Done
-                            </Button>
-
-                            </Row>
-
-                        </Form>
-
-                    </div>
-                </div>
-            </div>
-
+                  
+                    <input type="submit" href="./Confirm" value="Submit" style={{ borderRadius: '100px', height: '56px', width: '290px', marginLeft: "20px" }} class="btn btn-success" />
+                </form>
+            </div></center>
         );
     }
 }
