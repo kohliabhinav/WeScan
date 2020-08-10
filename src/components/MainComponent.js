@@ -12,11 +12,11 @@ class Main extends Component {
   render() {
     return (
     <div>
-            <Switch>
+          <Switch>
           <Route exact path='/confirm' component={()=><Confirm resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback}/>} />
-          <Route exact path='/signin' component={() => <Signin resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
+           <Route exact path='/signin' component={() => <Signin resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
           <Route exact path='/Subadminsignin' component={() => <Subadminsignin resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
-          <Route exact path='/verify' component={() => <Verify resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} /> />
+          <Route exact path='/verify' component={(props) => <Verify {...props}  />} /> 
           <Route exact path='/scan' component={() => <Scan resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} /> />
           <Route exact path='/seeyou' component={() => <Seeyou resetFeedbackForm={this.props.resetFeedbackForm} postFeedback={this.props.postFeedback} />} />
                         <Redirect to="/Signin"/>

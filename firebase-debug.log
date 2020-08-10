@@ -1,0 +1,63 @@
+[debug] [2020-08-09T23:19:44.664Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T23:19:44.667Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2020-08-09T23:19:44.667Z] CLI Version:   8.6.0
+[debug] [2020-08-09T23:19:44.668Z] Platform:      darwin
+[debug] [2020-08-09T23:19:44.668Z] Node Version:  v12.18.3
+[debug] [2020-08-09T23:19:44.668Z] Time:          Mon Aug 10 2020 04:49:44 GMT+0530 (India Standard Time)
+[debug] [2020-08-09T23:19:44.669Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T23:19:44.669Z] 
+[debug] [2020-08-09T23:19:44.682Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T23:19:44.683Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Volumes/STRONTIUM/wescan
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using wescan-in. 
+[debug] [2020-08-09T23:19:47.430Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wescan-in  
+ 
+[debug] [2020-08-09T23:20:18.373Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T23:20:18.375Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-08-09T23:20:18.375Z] CLI Version:   8.6.0
+[debug] [2020-08-09T23:20:18.376Z] Platform:      darwin
+[debug] [2020-08-09T23:20:18.376Z] Node Version:  v12.18.3
+[debug] [2020-08-09T23:20:18.378Z] Time:          Mon Aug 10 2020 04:50:18 GMT+0530 (India Standard Time)
+[debug] [2020-08-09T23:20:18.378Z] ----------------------------------------------------------------------
+[debug] [2020-08-09T23:20:18.378Z] 
+[debug] [2020-08-09T23:20:18.398Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-09T23:20:18.398Z] > authorizing via signed-in user
+[debug] [2020-08-09T23:20:18.399Z] [iam] checking project wescan-in for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-09T23:20:18.402Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wescan-in:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-09T23:20:19.850Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 09 Aug 2020 23:20:19 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1142","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-09T23:20:19.854Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/wescan-in  
+ 
+[debug] [2020-08-09T23:20:49.858Z] Server Error. ETIMEDOUT
+[debug] [2020-08-09T23:20:50.178Z] FirebaseError: Server Error. ETIMEDOUT
+    at Request._callback (/usr/local/lib/node_modules/firebase-tools/lib/api.js:32:31)
+    at self.callback (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:483:12)
+    at Timeout.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/request/request.js:851:16)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+[error] 
+[error] Error: Failed to get Firebase project wescan-in. Please make sure the project exists and your account has permission to access it.

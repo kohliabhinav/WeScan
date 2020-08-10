@@ -18,6 +18,7 @@ function phoneAuth() {
 }
 function codeverify() {
     var code = document.getElementById('verificationCode').value;
+    console.log('code ' + code);
     coderesult.confirm(code).then(function (result) {
         alert("success");
         var user = result.user;
