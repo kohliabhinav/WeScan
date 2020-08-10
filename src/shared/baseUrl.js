@@ -1,1 +1,1 @@
-export const baseUrl ='http://localhost:8080/api'
+export const baseUrl ='https://wescan-in.el.r.appspot.com/api'

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { baseUrl } from '../shared/baseUrl'
 import firebase from "../firebase"
 import { Redirect } from "react-router-dom"
+import Loader from 'react-loader-spinner'
 
 
 
@@ -203,11 +204,18 @@ class Signin extends Component {
                         </div><br />
 
                         {/* <div id ="" style={{marginBottom: '40px' }}></div> */}
-                        <input type="submit" href="./Confirm" value="Submit" style={{ borderRadius: '50px', height: '56px', width: '290px', marginLeft: "20px", textDecorationColor:'#010526',backgroundColor: "#FFF800"}} class="btn btn-success" id="recaptcha-container" />
+                        <button type="submit"  href="./Confirm" value="Submit" style={{ borderRadius: '50px', height: '56px', width: '290px', textDecorationColor: '#010526', backgroundColor: "#FFF800" }} class="btn btn-success" id="recaptcha-container" ><b><span style={{ color: "black" }}>DONE</span></b></button>
 
                     </form>
+                    {/* <Loader id="loader"
+                        type="loader"
+                        color="#00BFFF"
+                        height={50}
+                        width={50}
+                        timeout={3000} //3 secs
 
-        
+                    />
+         */}
 
                 </div></center>
 
