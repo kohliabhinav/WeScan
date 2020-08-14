@@ -1,131 +1,112 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './style.css';
+import 'font-awesome/css/font-awesome.min.css';
 
-
-
-class Signin extends Component {
-
+class Signin extends React.Component {
     constructor() {
         super();
         this.state = {
-            input: {},
+            fields: {},
             errors: {}
-        };
+        }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+        this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
 
-    handleChange(event) {
-        let input = this.state.input;
-        input[event.target.name] = event.target.value;
+    };
 
+    handleChange(e) {
+        let fields = this.state.fields;
+        fields[e.target.name] = e.target.value;
         this.setState({
-            input
+            fields
         });
+
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-
-        if (this.validate()) {
-            console.log(this.state);
-
-            let input = {};
-            input["name"] = "";
-            input["phone"] = "";
-            this.setState({ input: input });
-
-            alert('Response is submited');
+    submituserRegistrationForm(e) {
+        e.preventDefault();
+        if (this.validateForm()) {
+            let fields = {};
+            fields["username"] = "";
+            fields["emailid"] = "";
+            fields["mobileno"] = "";
+            fields["password"] = "";
+            this.setState({ fields: fields });
+            alert("Form submitted");
         }
+
     }
-    validate() {
-        let input = this.state.input;
+
+    validateForm() {
+
+        let fields = this.state.fields;
         let errors = {};
-        let isValid = true;
+        let formIsValid = true;
 
-        if (!input["name"]) {
-            isValid = false;
-            errors["name"] = "Please enter your name.";
+        if (!fields["username"]) {
+            formIsValid = false;
+            errors["username"] = "*Please enter your username.";
         }
 
-        
-        if (!input["phone"]) {
-            isValid = false;
-            errors["phone"] = "Please enter your phone number.";
-        }
-
-        if (typeof input["phone"] !== "undefined") {
-
-            var pattern = new RegExp(/^[0-9\b]+$/);
-            if (!pattern.test(input["phone"])) {
-                isValid = false;
-                errors["phone"] = "Please enter only number.";
-            } else if (input["phone"].length != 10) {
-                isValid = false;
-                errors["phone"] = "Please enter valid phone number.";
+        if (typeof fields["username"] !== "undefined") {
+            if (!fields["username"].match(/^[a-zA-Z ]*$/)) {
+                formIsValid = false;
+                errors["username"] = "*Please enter alphabet characters only.";
             }
         }
 
-       
 
-        return isValid;
+        if (!fields["mobileno"]) {
+            formIsValid = false;
+            errors["mobileno"] = "*Please enter your mobile no.";
+        }
+
+        if (typeof fields["mobileno"] !== "undefined") {
+            if (!fields["mobileno"].match(/^[0-9]{10}$/)) {
+                formIsValid = false;
+                errors["mobileno"] = "*Please enter valid mobile no.";
+            }
+        }
+
+
+        this.setState({
+            errors: errors
+        });
+        return formIsValid;
+
+
     }
 
-    
+
+
     render() {
         return (
-           <center> <div className="container" style={{
-                padding: "50px"
-            }}><br /><br />
+            <center><div style={{
+                paddingTop: "120px"
+            }}>
+                <h1 style={{ fontFamily: "Roboto" }}>Please Enter</h1><br /><br />
+
+                <center><div>
+                    <form method="post" name="userRegistrationForm" onSubmit={this.submituserRegistrationForm} >
+
+                        <input type="text" name="username" placeholder="&#xF007;&nbsp;&nbsp;&nbsp;Full Name" style={{ width: "260px", height: "56px", fontSize: "16", borderRadius: "6px", fontFamily: "FontAwesome" }} value={this.state.fields.username} onChange={this.handleChange} />
+                        <div className="errorMsg">{this.state.errors.username}</div><br />
 
 
+                        <input type="text" name="mobileno" placeholder="&#xF007;&nbsp;&nbsp;&nbsp;Phone Number" style={{ width: "260px", height: "56px", fontFamily: "FontAwesome", fontSize: "16", borderRadius: "6px" }} value={this.state.fields.mobileno} onChange={this.handleChange} />
+                        <div className="errorMsg">{this.state.errors.mobileno}</div><br />
 
-                <h1 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing: "38", marginLeft: "20px" }}> Please Enter</h1><br/><br/>
-
-
-                <form onSubmit={this.handleSubmit}>
-
-                    <div class="form-group">
-                        
-                        <input style={{
-                            width: "290px", height: "56px", fontFamily: "Roboto", fontSize: "16", borderRadius: "6px"
-                        }}
-                            type="text"
-                            name="name"
-                            value={this.state.input.name}
-                            onChange={this.handleChange}
-                            class="form-control"
-                            placeholder="Full Name"
-                            id="name"
-                        />
-
-                        <div className="text-danger">{this.state.errors.name}</div>
-                    </div><br/>
-
-                    
-
-                    <div class="form-group">
-                        
-                        <input style={{
-                            width: "290px", height: "56px", borderRadius: "6px", fontFamily: "Roboto", fontSize: "16"
-                        }}
-                            type="text"
-                            name="phone"
-                            value={this.state.input.phone}
-                            onChange={this.handleChange}
-                            class="form-control"
-                            placeholder="Mobile Number"
-                            id="number" />
-
-                        <div className="text-danger">{this.state.errors.phone}</div>
-                    </div><br/>
-
-                  
-                    <input type="submit" href="./Confirm" value="Submit" style={{ borderRadius: '100px', height: '56px', width: '290px', marginLeft: "20px" }} class="btn btn-success" />
-                </form>
+                        <button style={{ borderRadius: '100px', backgroundColor: 'yellow', width: "280px", height: "65px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black" }}>SEND OTP</span></button>
+                    </form>
+                </div></center>
             </div></center>
+
         );
     }
+
+
 }
+
 
 export default Signin;
