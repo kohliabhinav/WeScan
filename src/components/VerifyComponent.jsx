@@ -30,11 +30,11 @@ class Verify extends Component {
                 <div><br/><br/>
 
                     <div style={{ width: "296", height: "1000", fontSize: '42px', borderRadius:"5px" }}>
-                    <OtpInput id="VerificationCode" style={{ width: "296", height: "56"}}
+                    <center><OtpInput id="VerificationCode" style={{ width: "296", height: "56"}}
                         onChange={this.handleChange}
                         numInputs={6}
-                        separator={<span>.</span>}
-                    />
+                        separator={<span>&nbsp;</span>}
+                    /></center>
                     </div><br /><br/>
                     
 
@@ -45,7 +45,7 @@ class Verify extends Component {
                     
                         
 
-                        <button style={{ borderRadius: '50px', backgroundColor: 'yellow', width: "280px", height: "56px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
+                        <button style={{ borderRadius: '50px', backgroundColor: 'yellow', width: "280px", height: "70px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
                             
 
                     
