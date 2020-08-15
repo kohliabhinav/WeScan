@@ -35,7 +35,10 @@ class Scan extends Component {
                     onScan={this.handleScan}
                     style={{ width: "100%" }}
                 />
-                <p>{this.state.result}</p>
+                <a href="#" style={{
+                    fontFamily: "Roboto", fontSize: "16px", width: "88px", height: "21px", color: "#010526"
+                }}>{this.state.result}</a>
+                
             </div>
         );
     }

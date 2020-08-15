@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import OtpInput from 'react-otp-input';
-import { Button, Row } from 'reactstrap'
 import './style.css';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -21,14 +20,16 @@ class Verify extends Component {
                 padding: "60px"
             }}><br/><br/>
                 <div className="row">
-                    <center><div className="col-12">
-                        <h2 style={{ fontFamily: "Roboto", fontSize: "28", width: "174", height: "37", letterSpacing: "38", textDecorationColor: 'black', fontWeight: "100px" }}> Verify your Phone</h2>
-                        <p style={{ fontFamily: "Roboto", fontSize: "16", width: "190", height: "21", letterSpacing: "38", textDecorationColor: 'black' }}>Code sent to 00000</p>
-                    </div></center>
+                    <div className="col-12">
+                        <center><b><h1 style={{ fontFamily: "Roboto", fontSize: "28px", width: "234px", height: "33px", letterSpacing: "0.56px", textDecorationColor: 'black', fontWeight: "100px" }}> Verify your Phone</h1></b></center>
+                        <center><p style={{
+                            fontFamily: "Roboto", width: "192px", height: "21px", color: "#b8bbc6", fontSize:"16px"
+                        }}>OTP sent to 1234567891</p></center>
+                    </div>
                 </div>
                 <div><br/><br/>
-                    
-                    <div style={{ width: "296", height: "1000", fontSize: '42px' }}>
+
+                    <div style={{ width: "296", height: "1000", fontSize: '42px', borderRadius:"5px" }}>
                     <OtpInput id="VerificationCode" style={{ width: "296", height: "56"}}
                         onChange={this.handleChange}
                         numInputs={6}
@@ -37,14 +38,14 @@ class Verify extends Component {
                     </div><br /><br/>
                     
 
-                    <a href="#" style={{
-                        fontFamily: "Roboto", fontSize: "16", width: "88", height: "21", letterSpacing: "38", marginLeft:"95px"
-                    }}>Resend OTP</a><br /><br />
+                    <center><a href="#" style={{
+                        fontFamily: "Roboto", fontSize: "16px", width: "88px", height: "21px", color: "#010526"
+                    }}>Resend OTP</a><br /><br /></center>
                     <div>
                     
                         
 
-                            <button style={{ borderRadius: '100px', backgroundColor: 'yellow', width: "300px", height: "70px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", textAlign:"center" }}>VERIFY</span></button>
+                        <button style={{ borderRadius: '50px', backgroundColor: 'yellow', width: "280px", height: "56px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
                             
 
                     
