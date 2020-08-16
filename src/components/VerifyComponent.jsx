@@ -9,7 +9,8 @@ class Verify extends Component {
     state = {
         otp: '',
     };
-     
+
+
 
 
     handleChange = otp => this.setState({ otp });
@@ -29,9 +30,9 @@ class Verify extends Component {
                 </div>
                 <div><br/><br/>
 
-                    <div style={{ width: "296", height: "1000", fontSize: '42px', borderRadius:"5px" }}>
-                    <center><OtpInput id="VerificationCode" style={{ width: "296", height: "56"}}
-                        onChange={this.handleChange}
+                    <div style={{ width: "296", height: "1000", fontSize: '40px', borderRadius: "5px",color:"#010526" }}>
+                        <center><OtpInput id="VerificationCode" style={{ width: "296", height: "56", color: "#010526" }}
+                            onChange={this.handleChange} 
                         numInputs={6}
                         separator={<span>&nbsp;</span>}
                     /></center>
@@ -45,7 +46,7 @@ class Verify extends Component {
                     
                         
 
-                        <button style={{ borderRadius: '50px', backgroundColor: 'yellow', width: "280px", height: "70px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
+                        <button style={{ borderRadius: '50px', width: "280px", height: "70px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
                             
 
                     
