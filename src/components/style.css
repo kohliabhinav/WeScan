@@ -104,6 +104,10 @@ input {
     display: inline-block;
     transition: all 0.4s ease 0s;
 }
+::placeholder {
+    color: #b8bbc6;
+    font-size: 16px;
+}
 
     .hi:hover {
         color: #010526;

@@ -22,7 +22,7 @@ class Verify extends Component {
             }}><br/><br/>
                 <div className="row">
                     <div className="col-12">
-                        <center><b><h1 style={{ fontFamily: "Roboto", fontSize: "28px", width: "234px", height: "33px", letterSpacing: "0.56px", textDecorationColor: 'black', fontWeight: "100px" }}> Verify your Phone</h1></b></center>
+                        <center><b><h1 style={{ fontFamily: "Roboto", fontSize: "28px", width: "234px", height: "33px", letterSpacing: "0.56px", textDecorationColor: 'black', fontWeight: "100px", fontSize: "28px", fontFamily: "Roboto"  }}><b> Verify your Phone</b></h1></b></center>
                         <center><p style={{
                             fontFamily: "Roboto", width: "192px", height: "21px", color: "#b8bbc6", fontSize:"16px"
                         }}>OTP sent to 1234567891</p></center>
@@ -40,13 +40,13 @@ class Verify extends Component {
                     
 
                     <center><a href="#" style={{
-                        fontFamily: "Roboto", fontSize: "16px", width: "88px", height: "21px", color: "#010526"
+                        fontFamily: "Roboto", fontSize: "16px", width: "88px", height: "21px", color: "#010526", backgroundColor:"yellow"
                     }}>Resend OTP</a><br /><br /></center>
                     <div>
                     
                         
 
-                        <button style={{ borderRadius: '50px', width: "280px", height: "70px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto", justifyContent: "center", alignItems:"center" }}><b>VERIFY</b></span></button>
+                        <button style={{ borderRadius: '50px', width: "290px", height: "65px" }} type="submit" className="button" value="SEND OTP" ><span style={{ color: "black", width: "82px", height: "21px", fontFamily: "Roboto" }}><b>SEND OTP</b></span></button>
                             
 
                     

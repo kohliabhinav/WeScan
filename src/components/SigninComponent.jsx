@@ -84,7 +84,7 @@ class RegisterForm extends React.Component {
                 paddingTop: "150px"
             }}>
                 <center><div id="register">
-                    <h1 style={{ fontFamily: "Roboto" }}><b>Please Enter</b></h1><br /><br />
+                    <h1 style={{ fontFamily: "Roboto"}}><b>Please Enter</b></h1><br /><br />
                     <form method="post" name="userRegistrationForm" onSubmit={this.submituserRegistrationForm} >
 
                         <input type="text" className="hi" name="username" placeholder="&#xF007;&nbsp;&nbsp; Full Name" style={{ width: "290px", height: "56px", fontSize: "16px", borderRadius: "6px", fontFamily: '"FontAwesome","Roboto"' }} value={this.state.fields.username} onChange={this.handleChange} />
