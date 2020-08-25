@@ -113,7 +113,6 @@ class UserLoginForm extends React.Component {
 
 
     checkIfTokenExpired() {
-
         var tokenTime = parseInt(localStorage.getItem('tokenTime'))
 
         if (tokenTime) return false

@@ -41,6 +41,7 @@ class Verify extends Component {
 
 
 
+
     componentDidMount() {
         this.startTimer()
         let timeLeftVar = this.secondsToTime(this.state.seconds);

@@ -198,6 +198,10 @@ h1 {
     text-align: center;
     color: rgb(1, 5, 38);
 }
+::placeholder {
+    color: #b8bbc6;
+    font-size: 16px;
+}
 
 .alert {
     text-align: center;
