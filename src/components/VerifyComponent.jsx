@@ -300,6 +300,8 @@ class Verify extends Component {
                                         numInputs={6}
                                         value={this.state.otp}
                                         separator={<span>&nbsp;</span>}
+                                        isInputNum="true"
+                                        type="number"
                                     /></center>
                                     <div class="col-sm-2" style={{ visibility: this.state.seconds === 0 || this.state.loading ? 'hidden' : 'visible' }}>
                                         <span id="tokenExpire">You can resend token in </span>
